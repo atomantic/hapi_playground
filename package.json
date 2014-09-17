@@ -1,0 +1,19 @@
+{
+  "name": "hapi_playground",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test": "gulp test"
+  },
+  "dependencies": {
+    "hapi": "^6.7.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.7",
+    "gulp-jshint": "^1.8.4",
+    "gulp-lab": "^1.0.0",
+    "gulp-supervisor": "^0.1.2",
+    "lab": "^4.3.0",
+    "opn": "^1.0.0"
+  }
+}
