@@ -10,7 +10,7 @@ var gulp        = require('gulp'),
 
 var server = {
     host: 'localhost',
-    port: '46000'
+    port: '3666'
 };
 
 var sourcePaths = {

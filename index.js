@@ -6,11 +6,18 @@ var pjson = require('./package.json');
  */
 // http://hapijs.com/api
 var Hapi = require('hapi');
-// run at port 46000 to support cellophane proxy
-var server = new Hapi.Server(parseInt(process.env.PORT, 10) || 46000);
+var Joi = require('joi');
+var server = new Hapi.Server(parseInt(process.env.PORT, 10) || 3666);
 
 
 server.route({ method: 'GET', path: '/',
+    config:{
+        validate:{
+            query:{
+                v: Joi.bool().optional()
+            }
+        }
+    },
     handler: function (request, reply) {
         reply({data:'good'});
     }

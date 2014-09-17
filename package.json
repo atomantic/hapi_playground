@@ -6,7 +6,8 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "hapi": "^6.7.1"
+    "hapi": "^6.7.1",
+    "joi": "^4.6.2"
   },
   "devDependencies": {
     "gulp": "^3.8.7",
