@@ -15,7 +15,8 @@ pm2 monit
 in another terminal type
 
 ```
-curl http://localhost:3666
+brew install watch
+watch curl http://localhost:3666
 ```
 
 see if the memory increases on every request

@@ -1,13 +1,12 @@
 {
   "name": "hapi_playground",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "test": "gulp test"
   },
   "dependencies": {
     "hapi": "6.x.x",
-    "joi": "4.x.x",
     "newrelic": "1.x.x"
   },
   "devDependencies": {
