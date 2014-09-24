@@ -6,8 +6,9 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "hapi": "^6.7.1",
-    "joi": "^4.6.2"
+    "hapi": "6.x.x",
+    "joi": "4.x.x",
+    "newrelic": "1.x.x"
   },
   "devDependencies": {
     "gulp": "^3.8.7",
