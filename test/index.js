@@ -22,8 +22,6 @@ describe('App', function(){
                 method: 'GET',
                 url: '/'
             }, function(res) {
-                // https://github.com/hapijs/hapi/blob/master/docs/Reference.md#serverinjectoptions-callback
-                //console.log(result);
                 expect(res.statusCode).to.equal(200);
                 expect(res.result).to.be.instanceof(Object);
                 expect(res.result.data).to.equal('good');

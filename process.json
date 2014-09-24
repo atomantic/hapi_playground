@@ -7,7 +7,7 @@
     "log_date_format"    : "YYYY-MM-DD HH:mm Z",
     "max_memory_restart" : "160",
     "merge_logs"         : "true",
-    "name"               : "api",
+    "name"               : "hapi_playground",
     "out_file"           : "child-out.log",
     "pid_file"           : "child.pid",
     "script"             : "index.js",
