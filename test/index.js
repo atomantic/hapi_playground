@@ -24,7 +24,6 @@ describe('App', function(){
             }, function(res) {
                 expect(res.statusCode).to.equal(200);
                 expect(res.result).to.be.instanceof(Object);
-                expect(res.result.data).to.equal('good');
                 done();
             });
         });

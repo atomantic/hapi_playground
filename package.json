@@ -7,7 +7,9 @@
   },
   "dependencies": {
     "hapi": "6.x.x",
-    "newrelic": "1.x.x"
+    "memwatch": "^0.2.2",
+    "newrelic": "1.x.x",
+    "v8-profiler": "^5.2.0"
   },
   "devDependencies": {
     "gulp": "^3.8.7",
