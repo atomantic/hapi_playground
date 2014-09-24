@@ -1,50 +1,21 @@
 
-# testing gulp-istanbul issue 37
+# Hapi.js Playground
 
-https://github.com/SBoudrias/gulp-istanbul/issues/37
+I'm using this to validate whether or not there is a bug in Hapi or any of the plugins or apps I'm using with it.
 
 ```
-git clone git@github.com:atomantic/lab_istanbul.git
-cd lab_istanbul
+git clone git@github.com:atomantic/hapi_playground.git
+cd hapi_playground
 npm install
+npm install -g pm2
 gulp test
+pm2 start process.json
+pm2 monit
 ```
-
-report should show that index.js is 100% covered, but it's showing 0%.
-
-```
------------------|-----------|-----------|-----------|-----------|
-File             |   % Stmts |% Branches |   % Funcs |   % Lines |
------------------|-----------|-----------|-----------|-----------|
-   lab_istanbul/ |         0 |         0 |         0 |         0 |
-      index.js   |         0 |         0 |         0 |         0 |
------------------|-----------|-----------|-----------|-----------|
-All files        |         0 |         0 |         0 |         0 |
------------------|-----------|-----------|-----------|-----------|
-
-
-=============================== Coverage summary ===============================
-Statements   : 0% ( 0/8 )
-Branches     : 0% ( 0/2 )
-Functions    : 0% ( 0/2 )
-Lines        : 0% ( 0/8 )
-================================================================================
-```
-
-However Istanbul, reports correctly by itself:
+in another terminal type
 
 ```
-⇒  istanbul cover test/index.js
-Server running at: http://q.local:46000 version:  0.0.1
-=============================================================================
-Writing coverage object [/opt/github.com/atomantic/lab_istanbul/coverage/coverage.json]
-Writing coverage reports at [/opt/github.com/atomantic/lab_istanbul/coverage]
-=============================================================================
-
-=============================== Coverage summary ===============================
-Statements   : 100% ( 8/8 )
-Branches     : 100% ( 2/2 )
-Functions    : 100% ( 2/2 )
-Lines        : 100% ( 8/8 )
-================================================================================
+curl http://localhost:3666
 ```
+
+see if the memory increases on every request
