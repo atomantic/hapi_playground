@@ -1,15 +1,12 @@
 {
   "name": "hapi_playground",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "test": "gulp test"
   },
   "dependencies": {
-    "hapi": "6.x.x",
-    "memwatch": "^0.2.2",
-    "newrelic": "1.x.x",
-    "v8-profiler": "^5.2.0"
+    "hapi": "6.x.x"
   },
   "devDependencies": {
     "gulp": "^3.8.7",

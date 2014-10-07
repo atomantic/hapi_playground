@@ -1,6 +1,3 @@
-/**
- * Server Layer
- */
 var Hapi = require('hapi');
 var server = new Hapi.Server(3666);
 
@@ -11,11 +8,6 @@ server.route({ method: 'GET', path: '/',
     }
 });
 
-
-
-/**
- * Start the Server!
- */
 server.start(function () {
     console.log('Server running at:', server.info.uri);
 });
