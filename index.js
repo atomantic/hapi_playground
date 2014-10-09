@@ -1,5 +1,5 @@
 var Hapi = require('hapi');
-var server = new Hapi.Server(3666);
+var server = new Hapi.Server(46000);
 
 
 server.route({ method: 'GET', path: '/',
