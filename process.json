@@ -2,8 +2,8 @@
   "apps" : [{
     "error_file"         : "api-err.log",
     "exec_interpreter"   : "node",
-    "exec_mode"          : "custer_mode",
-    "instances"          : "1",
+    "exec_mode"          : "cluster_mode",
+    "instances"          : "max",
     "log_date_format"    : "YYYY-MM-DD HH:mm Z",
     "max_memory_restart" : "160",
     "merge_logs"         : "true",
