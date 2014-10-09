@@ -11,13 +11,13 @@ server.route({ method: 'GET', path: '/',
     }
 });
 
-
-
 /**
  * Start the Server!
  */
 server.start(function () {
+
     console.log('Server running at:', server.info.uri);
+	console.log(server._router);
 });
 
 module.exports = server;

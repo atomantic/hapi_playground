@@ -11,6 +11,6 @@
     "out_file"           : "child-out.log",
     "pid_file"           : "child.pid",
     "script"             : "index.js",
-    "watch"              : "true"
+    "watch"              : true
   }]
 }
