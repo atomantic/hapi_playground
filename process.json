@@ -1,6 +1,6 @@
 {
   "apps" : [{
-    "error_file"         : "api-err.log",
+    "error_file"         : "/tmp/api-err.log",
     "exec_interpreter"   : "node",
     "exec_mode"          : "cluster_mode",
     "instances"          : "max",
@@ -8,8 +8,8 @@
     "max_memory_restart" : "160",
     "merge_logs"         : "true",
     "name"               : "hapi_playground",
-    "out_file"           : "child-out.log",
-    "pid_file"           : "child.pid",
+    "out_file"           : "/tmp/child-out.log",
+    "pid_file"           : "/tmp/child.pid",
     "script"             : "index.js",
     "watch"              : true
   }]
