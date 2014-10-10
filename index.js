@@ -1,5 +1,5 @@
 var Hapi = require('hapi');
-var server = new Hapi.Server(46000);
+var server = new Hapi.Server(parseInt(process.env.PORT,10)||80);
 
 
 server.route({ method: 'GET', path: '/',
@@ -9,7 +9,6 @@ server.route({ method: 'GET', path: '/',
 });
 
 server.start(function () {
-
     console.log('Server running at:', server.info.uri);
 	console.log(server._router);
 });

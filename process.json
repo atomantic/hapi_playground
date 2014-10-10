@@ -1,5 +1,11 @@
 {
   "apps" : [{
+    "env"                : {
+        "API_VERSION"    : "v2",
+        "APP_ENV"        : "LOCAL",
+        "PORT"           : "80",
+        "SERVICE_ENV"    : "STAGE"
+    },
     "error_file"         : "./log/api-err.log",
     "exec_interpreter"   : "node",
     "exec_mode"          : "cluster_mode",
@@ -7,11 +13,11 @@
     "log_date_format"    : "YYYY-MM-DD HH:mm Z",
     "max_memory_restart" : "160",
     "merge_logs"         : true,
-    "name"               : "hapi_playground",
+    "name"               : "hapi-playground",
     "out_file"           : "./log/child-out.log",
     "pid_file"           : "./log/child.pid",
     "script"             : "index.js",
-    "ignoreWatch"        : ["[\\/\\\\]\\./", "log"],
+    "ignoreWatch"        : ["log"],
     "watch"              : true
   }]
 }
