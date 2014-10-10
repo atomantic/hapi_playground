@@ -9,17 +9,22 @@ https://github.com/Unitech/PM2/issues/744
 Currently testing PM2 watch with Hapi on CentOS 6.5 (seems to be working on OSX fine)
 
 ```
+# setup
 npm install git://github.com/Unitech/pm2#master -g
 node -v # should be 0.10.32
 pm2 -v # should be 0.11.0
-git clone git://github.com/atomantic/hapi_playground.git
-cd hapi_playground
-npm install
 # allow nodejs apps to bind to port 80
 # https://gist.github.com/gadr/6389682
 sudo setcap 'cap_net_bind_service=+ep' `which node`
 tail -f ~/.pm2/pm2.log&
+
+# app
+git clone git://github.com/atomantic/hapi_playground.git
+cd hapi_playground
+npm install
 pm2 start process.json
+
+# test
 curl -m 5 http://localhost
 sed -i 's/Hello Hapi/Hello Hapi 1/' index.js
 curl -m 5 http://localhost
@@ -28,18 +33,40 @@ curl -m 5 http://localhost
 ```
 So far, all good...
 
-but now, let's add memcached:
+But now, let's wipe it and try again...
+```
+pm2 kill;
+cd ../;
+rm -rf hapi_playground;
+git clone git://github.com/atomantic/hapi_playground.git
+cd hapi_playground
+npm install
+pm2 start process.json
+curl -m 5 http://localhost
+sed -i 's/Hello Hapi/Hello Hapi 1/' index.js
+curl -m 5 http://localhost
+```
+This time the curl fails:
+
+```
+curl: (28) Operation timed out after 5000 milliseconds with 0 bytes received
+```
+
+If it doesn't, let's try another modification:
+
+Let's add memcached:
 
 ```
 pm2 kill
+git checkout index.js;
 sed -i 's/\/\/var memcached/var memcached/' index.js
 pm2 start process.json
 curl -m 5 http://localhost
-sed -i 's/Hello Hapi 2/Hello Hapi 3/' index.js
+sed -i 's/Hello Hapi/Hello Hapi 1/' index.js
 curl -m 5 http://localhost
 ```
 
-Curls should work without returning: 
+Curls should work without returning (do they?): 
 ```
 curl: (28) Operation timed out after 5000 milliseconds with 0 bytes received
 ```
