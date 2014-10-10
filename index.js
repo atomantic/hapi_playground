@@ -11,7 +11,6 @@ server.route({ method: 'GET', path: '/',
 
 server.start(function () {
     console.log('Server running at:', server.info.uri);
-	console.log(server._router);
 });
 
 process.on('message', function(msg) {
