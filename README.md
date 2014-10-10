@@ -25,14 +25,21 @@ sed -i 's/Hello Hapi/Hello Hapi 1/' index.js
 curl -m 5 http://localhost
 sed -i 's/Hello Hapi 1/Hello Hapi 2/' index.js
 curl -m 5 http://localhost
+```
+So far, all good...
+
+but now, let's add memcached:
+
+```
 pm2 kill
+sed -i 's/\/\/var memcached/var memcached/' index.js
 pm2 start process.json
 curl -m 5 http://localhost
 sed -i 's/Hello Hapi 2/Hello Hapi 3/' index.js
 curl -m 5 http://localhost
 ```
 
-Curls shoudl work without returning: 
+Curls should work without returning: 
 ```
 curl: (28) Operation timed out after 5000 milliseconds with 0 bytes received
 ```
