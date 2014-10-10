@@ -1,12 +1,13 @@
 {
   "name": "hapi_playground",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "test": "gulp test"
   },
   "dependencies": {
-    "hapi": "6.x.x"
+    "hapi": "6.x.x",
+    "memcached": "0.2.x"
   },
   "devDependencies": {
     "gulp": "^3.8.7",

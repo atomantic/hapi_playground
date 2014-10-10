@@ -1,6 +1,7 @@
 var Hapi = require('hapi');
 var server = new Hapi.Server(parseInt(process.env.PORT,10)||80);
 
+//var memcached = require('./memcached');
 
 server.route({ method: 'GET', path: '/',
     handler: function (request, reply) {

@@ -23,9 +23,16 @@ pm2 start process.json
 curl -m 5 http://localhost
 sed -i 's/Hello Hapi/Hello Hapi 1/' index.js
 curl -m 5 http://localhost
+sed -i 's/Hello Hapi 1/Hello Hapi 2/' index.js
+curl -m 5 http://localhost
+pm2 kill
+pm2 start process.json
+curl -m 5 http://localhost
+sed -i 's/Hello Hapi 2/Hello Hapi 3/' index.js
+curl -m 5 http://localhost
 ```
 
-Should not get 
+Curls shoudl work without returning: 
 ```
 curl: (28) Operation timed out after 5000 milliseconds with 0 bytes received
 ```
