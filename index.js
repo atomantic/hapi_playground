@@ -1,5 +1,5 @@
 var Hapi = require('hapi');
-var server = new Hapi.Server(parseInt(process.env.PORT,10)||80);
+var server = new Hapi.Server(parseInt(process.env.PORT,10)||46100);
 
 //var memcached = require('./memcached');
 
