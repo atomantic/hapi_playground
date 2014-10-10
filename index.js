@@ -5,7 +5,7 @@ var server = new Hapi.Server(parseInt(process.env.PORT,10)||46100);
 
 server.route({ method: 'GET', path: '/',
     handler: function (request, reply) {
-        reply({data:'Hello Hapi'});
+        reply({data:'Hello Hapi 2'});
     }
 });
 

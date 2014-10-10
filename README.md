@@ -13,9 +13,6 @@ Currently testing PM2 watch with Hapi on CentOS 6.5 (seems to be working on OSX 
 npm install git://github.com/Unitech/pm2#master -g
 node -v # should be 0.10.32
 pm2 -v # should be 0.11.0
-# allow nodejs apps to bind to port 80
-# https://gist.github.com/gadr/6389682
-sudo setcap 'cap_net_bind_service=+ep' `which node`
 tail -f ~/.pm2/pm2.log&
 
 # app
@@ -25,11 +22,11 @@ npm install
 pm2 start process.json
 
 # test
-curl -m 5 http://localhost
+curl -m 5 http://localhost:46100
 sed -i 's/Hello Hapi/Hello Hapi 1/' index.js
-curl -m 5 http://localhost
+curl -m 5 http://localhost:46100
 sed -i 's/Hello Hapi 1/Hello Hapi 2/' index.js
-curl -m 5 http://localhost
+curl -m 5 http://localhost:46100
 ```
 So far, all good...
 
@@ -42,9 +39,9 @@ git clone git://github.com/atomantic/hapi_playground.git
 cd hapi_playground
 npm install
 pm2 start process.json
-curl -m 5 http://localhost
+curl -m 5 http://localhost:46100
 sed -i 's/Hello Hapi/Hello Hapi 1/' index.js
-curl -m 5 http://localhost
+curl -m 5 http://localhost:46100
 ```
 This time the curl fails:
 
@@ -61,9 +58,9 @@ pm2 kill
 git checkout index.js;
 sed -i 's/\/\/var memcached/var memcached/' index.js
 pm2 start process.json
-curl -m 5 http://localhost
+curl -m 5 http://localhost:46100
 sed -i 's/Hello Hapi/Hello Hapi 1/' index.js
-curl -m 5 http://localhost
+curl -m 5 http://localhost:46100
 ```
 
 Curls should work without returning (do they?): 

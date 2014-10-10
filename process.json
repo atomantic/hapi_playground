@@ -3,7 +3,7 @@
     "env"                : {
         "API_VERSION"    : "v2",
         "APP_ENV"        : "LOCAL",
-        "PORT"           : "80",
+        "PORT"           : "46100",
         "SERVICE_ENV"    : "STAGE"
     },
     "error_file"         : "./log/api-err.log",
