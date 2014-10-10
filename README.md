@@ -9,10 +9,12 @@ https://github.com/Unitech/PM2/issues/744
 Currently testing PM2 watch with Hapi on CentOS 6.5 (seems to be working on OSX fine)
 
 ```
+npm install git://github.com/Unitech/pm2#master -g
+node -v # should be 0.10.32
+pm2 -v # should be 0.11.0
 git clone git://github.com/atomantic/hapi_playground.git
 cd hapi_playground
 npm install
-npm install -g pm2 node-inspector
 # allow nodejs apps to bind to port 80
 # https://gist.github.com/gadr/6389682
 sudo setcap 'cap_net_bind_service=+ep' `which node`
