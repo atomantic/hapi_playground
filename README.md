@@ -9,7 +9,7 @@ https://github.com/Unitech/PM2/issues/744
 Currently testing PM2 watch with Hapi on CentOS 6.5 (seems to be working on OSX fine)
 
 ```
-git clone git@github.com:atomantic/hapi_playground.git
+git clone git://github.com/atomantic/hapi_playground.git
 cd hapi_playground
 npm install
 npm install -g pm2 node-inspector
@@ -33,7 +33,7 @@ curl: (28) Operation timed out after 5000 milliseconds with 0 bytes received
 ## Testing memory leaks (OSX)
 
 ```
-git clone git@github.com:atomantic/hapi_playground.git
+git clone git://github.com/atomantic/hapi_playground.git
 cd hapi_playground
 npm install
 npm install -g pm2 node-inspector
