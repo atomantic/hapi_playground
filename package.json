@@ -6,7 +6,7 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "hapi": "11.1.4",
+    "hapi": "13.4.0",
     "memcached": "0.2.x"
   },
   "devDependencies": {
